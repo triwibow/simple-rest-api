@@ -17,6 +17,10 @@ class Movie {
     addData(req, res){
         this._models.addData(req, res);
     }
+
+    editData(req, res){
+        this._models.editData(req, res);
+    }
 }
 
 module.exports = Movie;

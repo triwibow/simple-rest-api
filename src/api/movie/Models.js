@@ -50,6 +50,26 @@ class Models {
             }
         })
     }
+
+    editData(req, res){
+        const query = `UPDATE movie_tb SET
+            movie_title = "${req.body.movie_title}",
+            movie_publication_year = "${req.body.movie_publication_year}",
+            movie_description = "${req.body.movie_description}"
+            WHERE movie_id = ${req.params.id}
+        `;
+
+        this._connection.query(query, (error, rows) => {
+            if(error){
+                console.log(error);
+            } else {
+                res.json({
+                    "status": 200,
+                    "message": "successfully edit data"
+                });
+            }
+        })
+    }
 }
 
 module.exports = Models;

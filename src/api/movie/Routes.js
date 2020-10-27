@@ -20,6 +20,10 @@ class Routes {
         this._app.post('/api/movie/add', (req, res) => {
             this._movie.addData(req, res);
         });
+
+        this._app.put('/api/movie/edit/:id', (req, res) => {
+            this._movie.editData(req, res);
+        });
     }
 }
 
