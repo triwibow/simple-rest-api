@@ -12,6 +12,10 @@ class Routes {
         this._app.get('/api/movie/', (req, res) => {
             this._movie.getData(req, res);
         });
+
+        this._app.get('/api/movie/:id', (req, res) => {
+            this._movie.getDataById(req, res);
+        })
     }
 }
 

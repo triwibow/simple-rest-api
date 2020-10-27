@@ -8,7 +8,7 @@ class Models {
     getData(req, res){
         this._connection.query("SELECT * FROM movie_tb", (error, rows, field) => {
             if(error){
-                this._connection.log(error);
+                console.log(error);
             } else {
                 res.json({
                     "status": 200,
@@ -17,6 +17,20 @@ class Models {
                 });
             }
         });
+    }
+
+    getDataById(req, res){
+        this._connection.query(`SELECT * FROM movie_tb WHERE movie_id = ${req.params.id}`, (error, rows) => {
+            if(error){
+                console.log(error);
+            } else {
+                res.json({
+                    "status": 200,
+                    "message": "success",
+                    "data": rows
+                });
+            }
+        })
     }
 }
 

@@ -8,11 +8,10 @@ class Movie {
 
     getData(req, res){
         const data = this._models.getData(req,res);
-        // console.log(data);
-        // res.json({
-        //     "status": 200,
-        //     "data": data
-        // });
+    }
+
+    getDataById(req, res){
+        this._models.getDataById(req, res);
     }
 }
 
