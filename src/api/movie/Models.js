@@ -1,5 +1,3 @@
-const { database } = require("../../config/db-config");
-
 class Models {
     constructor(database){
         this._connection = database;
