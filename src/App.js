@@ -1,8 +1,9 @@
 class App {
-    constructor({app, database, routes}){
+    constructor({app, database, routes, bodyParser}){
         this._app = app;
         this._database = database;
         this._routes = routes;
+        this._bodyParser = bodyParser;
 
         this._config();
         this._listen();
@@ -11,6 +12,12 @@ class App {
 
     _config(){
         this._app.disable('etag');
+
+        // application/json type post data
+        this._app.use(this._bodyParser.json());
+
+        //application/x-www-form-urlencoded post data
+        this._app.use(this._bodyParser.urlencoded({ extended: false }));
     }
 
     _listen(){

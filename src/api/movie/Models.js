@@ -32,6 +32,24 @@ class Models {
             }
         })
     }
+
+    addData(req, res){
+        const query = `INSERT INTO movie_tb (movie_id, movie_title, movie_publication_year, movie_description) 
+            VALUES(
+                NULL, "${req.body.movie_title}", "${req.body.movie_publication_year}", "${req.body.movie_description}"
+            )`;
+
+        this._connection.query(query, (error, rows) => {
+            if(error){
+                console.log(error);
+            } else {
+                res.json({
+                    "status": 200,
+                    "message": "successfully added data"
+                });
+            }
+        })
+    }
 }
 
 module.exports = Models;

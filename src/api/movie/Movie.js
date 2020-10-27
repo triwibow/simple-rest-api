@@ -13,6 +13,10 @@ class Movie {
     getDataById(req, res){
         this._models.getDataById(req, res);
     }
+
+    addData(req, res){
+        this._models.addData(req, res);
+    }
 }
 
 module.exports = Movie;

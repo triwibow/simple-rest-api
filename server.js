@@ -1,5 +1,6 @@
 const express = require('express');
 const mysql = require('mysql');
+const bodyParser = require('body-parser');
 const route = require('./routes');
 const config = require('./src/config/db-config');
 const database = require('./src/config/database');
@@ -14,5 +15,6 @@ const app = new App({
         password: config.password,
         database: config.database
     }),
-    routes: route
+    routes: route,
+    bodyParser
 });
