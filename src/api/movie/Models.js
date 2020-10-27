@@ -70,6 +70,21 @@ class Models {
             }
         })
     }
+
+    deleteData(req, res){
+        const query = `DELETE FROM movie_tb WHERE movie_id = ${req.params.id}`;
+
+        this._connection.query(query, (error, rows) => {
+            if(error){
+                console.log(error);
+            } else {
+                res.json({
+                    "status": 200,
+                    "message": "successfully delete data"
+                })
+            }
+        })
+    }
 }
 
 module.exports = Models;

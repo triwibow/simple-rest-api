@@ -24,6 +24,10 @@ class Routes {
         this._app.put('/api/movie/edit/:id', (req, res) => {
             this._movie.editData(req, res);
         });
+
+        this._app.delete('/api/movie/delete/:id', (req, res) => {
+            this._movie.deleteData(req, res);
+        })
     }
 }
 
