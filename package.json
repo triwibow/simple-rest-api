@@ -1,0 +1,19 @@
+{
+  "name": "simple-rest-api",
+  "version": "1.0.0",
+  "description": "simple rest api with express js",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/triwibow/simple-rest-api.git"
+  },
+  "author": "tri wibowo",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/triwibow/simple-rest-api/issues"
+  },
+  "homepage": "https://github.com/triwibow/simple-rest-api#readme"
+}
