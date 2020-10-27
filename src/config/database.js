@@ -6,6 +6,8 @@ const database = {
             if(err) throw err;
             console.log('successful connection to database');
         });
+
+        return connection;
     }
 }
 
